@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-senate-lobbying",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "US Senate Lobbying Disclosure (LDA) MCP.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-senate-lobbying": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "senate-lobbying"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-senate-lobbying.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/senate-lobbying",
   "pipeworx": {
-    "sourceHash": "v1-b459c3b4c7e9a4f5eae02f3834cd219e39896afbfa50b87c85a81ed2d84369b5",
-    "sourceCommit": "6fe8fb3e01138dfc4ebe7d5c246503aab9278d06"
+    "mode": "gateway",
+    "slug": "senate-lobbying",
+    "gatewaySlug": "senate-lobbying",
+    "sourceHash": "v1-d7ee307077b5293a20a51a34f99b071752f71ca20c781e0298d2d5501c39ba0b",
+    "sourceCommit": "f47d581679e1e887373df51ba623f891fbe4c464"
   }
 }
